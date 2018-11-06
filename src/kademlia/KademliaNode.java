@@ -6,7 +6,6 @@ import kademlia.dht.GetParameter;
 import kademlia.dht.JKademliaStorageEntry;
 import kademlia.dht.KadContent;
 import kademlia.dht.KademliaDHT;
-import kademlia.dht.KademliaStorageEntry;
 import kademlia.exceptions.ContentNotFoundException;
 import kademlia.exceptions.RoutingException;
 import kademlia.node.Node;

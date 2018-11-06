@@ -7,7 +7,6 @@ import kademlia.KadServer;
 import kademlia.KademliaNode;
 import kademlia.dht.KademliaDHT;
 import kademlia.dht.KademliaStorageEntryMetadata;
-import kademlia.dht.StorageEntryMetadata;
 import kademlia.exceptions.ContentNotFoundException;
 import kademlia.message.Message;
 import kademlia.message.StoreContentMessage;

@@ -62,12 +62,12 @@ public interface KademliaRoutingTable
     /**
      * @return List A List of all Nodes in this RoutingTable
      */
-    public List getAllNodes();
+    public List<?> getAllNodes();
 
     /**
      * @return List A List of all Nodes in this RoutingTable
      */
-    public List getAllContacts();
+    public List<?> getAllContacts();
 
     /**
      * @return Bucket[] The buckets in this Kad Instance

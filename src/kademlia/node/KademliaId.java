@@ -18,7 +18,11 @@ import kademlia.message.Streamable;
 public class KademliaId implements Streamable, Serializable
 {
 
-    public final transient static int ID_LENGTH = 160;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public final transient static int ID_LENGTH = 160;
     private byte[] keyBytes;
 
     /**

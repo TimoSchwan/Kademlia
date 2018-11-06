@@ -15,7 +15,6 @@ import kademlia.dht.GetParameter;
 import kademlia.KadConfiguration;
 import kademlia.KadServer;
 import kademlia.dht.JKademliaStorageEntry;
-import kademlia.dht.KademliaStorageEntry;
 import kademlia.exceptions.ContentNotFoundException;
 import kademlia.exceptions.RoutingException;
 import kademlia.exceptions.UnknownMessageException;
@@ -56,7 +55,7 @@ public class ContentLookupOperation implements Operation, Receiver
     private final Map<Integer, Node> messagesTransiting;
 
     /* Used to sort nodes */
-    private final Comparator comparator;
+    private final Comparator<Node> comparator;
 
     /* Statistical information */
     private final RouteLengthChecker routeLengthChecker;
@@ -88,7 +87,7 @@ public class ContentLookupOperation implements Operation, Receiver
          * This map will be sorted by which nodes are closest to the lookupId
          */
         this.comparator = new KeyComparator(params.getKey());
-        this.nodes = new TreeMap(this.comparator);
+        this.nodes = new TreeMap<Node, Byte>(this.comparator);
     }
 
     /**
@@ -107,7 +106,7 @@ public class ContentLookupOperation implements Operation, Receiver
              * We add all nodes here instead of the K-Closest because there may be the case that the K-Closest are offline
              * - The operation takes care of looking at the K-Closest.
              */
-            List<Node> allNodes = this.localNode.getRoutingTable().getAllNodes();
+            List<Node> allNodes = (List<Node>) this.localNode.getRoutingTable().getAllNodes();
             this.addNodes(allNodes);
             
             /* Also add the initial set of nodes to the routeLengthChecker */
@@ -192,7 +191,7 @@ public class ContentLookupOperation implements Operation, Receiver
          */
         for (int i = 0; (this.messagesTransiting.size() < this.config.maxConcurrentMessagesTransiting()) && (i < unasked.size()); i++)
         {
-            Node n = (Node) unasked.get(i);
+            Node n = unasked.get(i);
 
             int comm = server.sendMessage(n, lookupMessage, this);
 

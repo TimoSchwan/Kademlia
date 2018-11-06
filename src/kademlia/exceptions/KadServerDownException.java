@@ -9,7 +9,12 @@ package kademlia.exceptions;
 public class KadServerDownException extends RoutingException
 {
 
-    public KadServerDownException()
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public KadServerDownException()
     {
         super();
     }

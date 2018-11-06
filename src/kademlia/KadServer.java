@@ -16,7 +16,6 @@ import java.util.TimerTask;
 import kademlia.exceptions.KadServerDownException;
 import kademlia.message.KademliaMessageFactory;
 import kademlia.message.Message;
-import kademlia.message.MessageFactory;
 import kademlia.node.Node;
 import kademlia.message.Receiver;
 
@@ -52,8 +51,8 @@ public class KadServer
     
     {
         isRunning = true;
-        this.tasks = new HashMap<>();
-        this.receivers = new HashMap<>();
+        this.tasks = new HashMap<Integer, TimerTask>();
+        this.receivers = new HashMap<Integer, Receiver>();
         this.timer = new Timer(true);
     }
 

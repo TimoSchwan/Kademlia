@@ -47,7 +47,7 @@ public class NodeLookupOperation implements Operation, Receiver
     private final Map<Integer, Node> messagesTransiting;
 
     /* Used to sort nodes */
-    private final Comparator comparator;
+    private final Comparator<?> comparator;
 
     
     {
@@ -130,14 +130,14 @@ public class NodeLookupOperation implements Operation, Receiver
      *
      * @param list The list from which to add nodes
      */
-    public void addNodes(List<Node> list)
+    public void addNodes(List<?> list)
     {
-        for (Node o : list)
+        for (Object o : list)
         {
             /* If this node is not in the list, add the node */
             if (!nodes.containsKey(o))
             {
-                nodes.put(o, UNASKED);
+                nodes.put((Node) o, UNASKED);
             }
         }
     }

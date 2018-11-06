@@ -9,7 +9,12 @@ package kademlia.exceptions;
 public class UnknownMessageException extends RuntimeException
 {
 
-    public UnknownMessageException()
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public UnknownMessageException()
     {
         super();
     }

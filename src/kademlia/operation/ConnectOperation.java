@@ -7,12 +7,10 @@ package kademlia.operation;
 
 import kademlia.message.Receiver;
 import java.io.IOException;
-import kademlia.JKademliaNode;
 import kademlia.KadConfiguration;
 import kademlia.KadServer;
 import kademlia.KademliaNode;
 import kademlia.exceptions.RoutingException;
-import kademlia.message.AcknowledgeMessage;
 import kademlia.message.ConnectMessage;
 import kademlia.message.Message;
 import kademlia.node.Node;
@@ -103,9 +101,6 @@ public class ConnectOperation implements Operation, Receiver
     @Override
     public synchronized void receive(Message incoming, int comm)
     {
-        /* The incoming message will be an acknowledgement message */
-        AcknowledgeMessage msg = (AcknowledgeMessage) incoming;
-
         /* The bootstrap node has responded, insert it into our space */
         this.localNode.getRoutingTable().insert(this.bootstrapNode);
 

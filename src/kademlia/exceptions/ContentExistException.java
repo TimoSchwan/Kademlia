@@ -9,7 +9,12 @@ package kademlia.exceptions;
 public class ContentExistException extends Exception
 {
 
-    public ContentExistException()
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public ContentExistException()
     {
         super();
     }

@@ -11,7 +11,12 @@ import java.io.IOException;
 public class RoutingException extends IOException
 {
 
-    public RoutingException()
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public RoutingException()
     {
         super();
     }

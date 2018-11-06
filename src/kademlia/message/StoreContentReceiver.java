@@ -14,13 +14,11 @@ import kademlia.dht.KademliaDHT;
 public class StoreContentReceiver implements Receiver
 {
 
-    private final KadServer server;
     private final KademliaNode localNode;
     private final KademliaDHT dht;
 
     public StoreContentReceiver(KadServer server, KademliaNode localNode, KademliaDHT dht)
     {
-        this.server = server;
         this.localNode = localNode;
         this.dht = dht;
     }

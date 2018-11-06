@@ -18,17 +18,19 @@ import kademlia.message.Streamable;
 public class Node implements Streamable, Serializable
 {
 
-    private KademliaId nodeId;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private KademliaId nodeId;
     private InetAddress inetAddress;
     private int port;
-    private final String strRep;
-
     public Node(KademliaId nid, InetAddress ip, int port)
     {
         this.nodeId = nid;
         this.inetAddress = ip;
         this.port = port;
-        this.strRep = this.nodeId.toString();
+        this.nodeId.toString();
     }
 
     /**
@@ -41,7 +43,7 @@ public class Node implements Streamable, Serializable
     public Node(DataInputStream in) throws IOException
     {
         this.fromStream(in);
-        this.strRep = this.nodeId.toString();
+        this.nodeId.toString();
     }
 
     /**

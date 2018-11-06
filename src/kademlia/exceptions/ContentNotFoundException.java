@@ -9,7 +9,12 @@ package kademlia.exceptions;
 public class ContentNotFoundException extends Exception
 {
 
-    public ContentNotFoundException()
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public ContentNotFoundException()
     {
         super();
     }

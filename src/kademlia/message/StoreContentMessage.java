@@ -4,7 +4,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import kademlia.dht.JKademliaStorageEntry;
-import kademlia.dht.KademliaStorageEntry;
 import kademlia.node.Node;
 import kademlia.util.serializer.JsonSerializer;
 
